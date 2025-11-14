@@ -214,12 +214,9 @@ pub fn draw_ui(state: &mut Arc<Mutex<State>>, cvar: &mut Arc<Condvar>) {
                 let state_ptr = &mut state_unlocked as *mut std::sync::MutexGuard<'_, State<'_>>;
                 let (mut music_state, mut playlist_state, mut artist_state);
                 unsafe {
-                    let musicbar_ptr = std::ptr::addr_of_mut!((*state_ptr).musicbar);
-                    music_state = &mut (*musicbar_ptr).1;
-                    let playlistbar_ptr = std::ptr::addr_of_mut!((*state_ptr).playlistbar);
-                    playlist_state = &mut (*playlistbar_ptr).1;
-                    let artistbar_ptr = std::ptr::addr_of_mut!((*state_ptr).artistbar);
-                    artist_state = &mut (*artistbar_ptr).1;
+                    music_state = &mut (&mut *state_ptr).musicbar.1;
+                    playlist_state = &mut (&mut *state_ptr).playlistbar.1;
+                    artist_state = &mut (&mut *state_ptr).artistbar.1;
                 }
 
                 let music_table = MiddleLayout::get_music_container(&mut state_unlocked);
