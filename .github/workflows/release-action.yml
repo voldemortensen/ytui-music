@@ -31,6 +31,7 @@ jobs:
       - name: Build
         run: |
           lib /name:mpv-2.dll /out:mpv.lib /MACHINE:X64
+          ls -lah
           cargo clean &&
           cargo build --all --release &&
           for /r %i in (*) do @echo %~ni
