@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: |
           cargo clean &&
-          cargo build --all --release -vv &&
+          cargo build --all --release &&
           for /r %i in (*) do @echo %~ni
 
       - name: Release
