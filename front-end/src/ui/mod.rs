@@ -13,11 +13,11 @@ mod shared_import {
     };
     pub use tui::{
         backend::Backend,
-        layout::{self, Alignment, Constraint, Direction, Layout, Rect},
+        layout::{Alignment, Constraint, Direction, Layout, Rect},
         style::{Color, Modifier, Style},
-        text::{Span, Text},
+        text::{self, Span, Text},
         widgets::{
-            Block, BorderType, Borders, Gauge, List, ListItem, ListState, Paragraph,
+            self, Block, BorderType, Borders, Gauge, List, ListItem, ListState, Paragraph,
             Row, Table, TableState,
         },
     };
