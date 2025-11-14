@@ -15,6 +15,7 @@ fetcher = { path = "../fetcher" }
 lazy_static = "1.4.0"
 config = { path = "../config" }
 reqwest = { version = "0.11", features = ["json", "gzip"] }
+libmpv2 = { version = "5.0.1", default-features = false, features = ["render", "build_libmpv"] }
 
-[features]
-build_libmpv = ["libmpv/build_libmpv"]
+#[features]
+#build_libmpv = ["libmpv/build_libmpv"]
