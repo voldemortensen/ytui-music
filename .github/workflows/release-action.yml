@@ -27,8 +27,9 @@ jobs:
 
       - name: Build
         run: |
-              cargo build --all --release &&
-              for /r %i in (*) do @echo %~ni
+          cargo clean &&
+          cargo build --all --release -vv &&
+          for /r %i in (*) do @echo %~ni
 
       - name: Release
         uses: softprops/action-gh-release@v2
