@@ -22,6 +22,9 @@ jobs:
       - name: Install depencencies
         run: choco install mpv
 
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
       - name: Install latest rust toolchain
         uses: actions-rust-lang/setup-rust-toolchain@v1
 
