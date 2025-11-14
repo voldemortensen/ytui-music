@@ -80,7 +80,7 @@ impl<'parent> ui::TopLayout {
                 Block::with_title("Search ".to_owned())
             }
         };
-        let text = text::Spans::from(vec![
+        let text = text::Line::from(vec![
             Span::styled(
                 state.search.0.as_str(),
                 Style::default()
